@@ -23,5 +23,7 @@ fi
 tag_version=$(echo "$tag" | sed -E 's/^[^0-9]+//')
 version="${tag_version}-${commit_hash}"
 
-echo $version
-echo $version > version.txt
+mkdir -p dist
+
+echo $version > dist/version.txt
+echo "[ version ] success dist/verison.txt" $(cat dist/version.txt)
